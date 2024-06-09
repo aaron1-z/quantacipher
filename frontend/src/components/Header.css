@@ -1,0 +1,84 @@
+.Header {
+  background-color: #004aad;
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.LogoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.LogoImage {
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  margin-right: 10px;
+}
+
+.LogoText {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.NavLinks {
+  display: flex;
+  align-items: center;
+}
+
+.NavLinks a {
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold; /* Make text bold */
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+
+.NavLinks a:hover {
+  background-color: #ffffff;
+  color: #004aad;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .NavLinks {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #004aad;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    display: none;
+  }
+
+  .NavLinks.active {
+    display: flex;
+  }
+
+  .NavLinks a {
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  .MenuIcon {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.MenuIcon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ffffff;
+}

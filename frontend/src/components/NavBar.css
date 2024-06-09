@@ -1,0 +1,29 @@
+/* src/components/NavBar.css */
+
+.NavBar {
+    display: flex;
+    justify-content: center;
+    background-color: #007bff;
+    padding: 10px 0;
+  }
+  
+  .NavBar a {
+    color: black; /* Black text */
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .NavBar a:hover {
+    background-color: #0056b3;
+    color: white; /* White text on hover */
+  }
+  
+  .active {
+    background-color: #0056b3;
+    color: white; /* White text for active link */
+  }
+  
+  

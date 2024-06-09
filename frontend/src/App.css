@@ -1,0 +1,18 @@
+/* src/app.css */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.MainContent {
+  flex: 1;
+  padding: 20px;
+}
+
+.Footer {
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  text-align: center;
+}

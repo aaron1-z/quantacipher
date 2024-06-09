@@ -1,0 +1,11 @@
+/* src/components/Footer.css */
+
+.Footer {
+    background-color: #007bff; /* Blue background */
+    color: #000000; /* Black text */
+    font-weight: bold; /* Bold text */
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
