@@ -1,6 +1,5 @@
 const Data = require('../models/Data');
 const mongoose = require('mongoose');
-const authUtils = require('../utils/authUtils');
 
 /**
  * Store encrypted key-value pair
@@ -10,33 +9,11 @@ const authUtils = require('../utils/authUtils');
 exports.storeData = async (req, res) => {
   try {
     const { key, value } = req.body;
-    const userId = req.user.id; // User ID from JWT token
-
-    // Validate input
-    if (!key || !value) {
-      return res.status(400).json({
-        success: false,
-        message: 'Both key and value are required'
-      });
-    }
-
-    // Check if key already exists for this user
-    const existingData = await Data.findOne({ userId, key });
-    if (existingData) {
-      return res.status(400).json({
-        success: false,
-        message: 'Key already exists. Use a different key or update existing one.'
-      });
-    }
-
-    // Encrypt the value before storing
-    const encryptedData = authUtils.encryptData(value);
+    const userId = req.user.id; // Assumes the user ID is available in req.user
 
     const newData = new Data({
       key,
-      encryptedValue: encryptedData.encrypted,
-      iv: encryptedData.iv,
-      userId
+      value
     });
 
     await newData.save();
@@ -44,10 +21,7 @@ exports.storeData = async (req, res) => {
     res.status(201).json({
       success: true,
       message: 'Data stored successfully',
-      data: {
-        key: newData.key,
-        createdAt: newData.createdAt
-      }
+      data: newData
     });
   } catch (error) {
     console.error('Error storing data:', error);

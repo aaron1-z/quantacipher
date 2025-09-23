@@ -9,7 +9,7 @@ const authMiddleware = (req, res, next) => {
   if (!token) return res.status(401).json({ message: 'No token, authorization denied' });
 
   try {
-    const decoded = jwt.verify(token, config.jwtSecret);
+    const decoded = jwt.verify(token, config.secretOrKey);
     req.user = decoded;
     next();
   } catch (e) {
