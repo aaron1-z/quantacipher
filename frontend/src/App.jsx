@@ -1,16 +1,16 @@
 // App.jsx
 
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
+import PrivateRoute from './components/PrivateRoute';
 import Home from './pages/Home';
 import About from './pages/About';
 import Store from './pages/Store';
 import Retrieve from './pages/Retrieve';
-import Register from './pages/Register'; // Import Register component
-import Login from './pages/Login'; // Import Login component
+import Register from './pages/Register';
+import Login from './pages/Login';
 import './App.css';
 
 function App() {
@@ -22,8 +22,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/store" element={<Store />} />
-          <Route path="/retrieve" element={<Retrieve />} />
+          {/* Protected routes - require authentication */}
+          <Route path="/store" element={<PrivateRoute element={Store} />} />
+          <Route path="/retrieve" element={<PrivateRoute element={Retrieve} />} />
+          {/* Public routes */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>
