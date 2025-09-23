@@ -16,8 +16,8 @@ const Login = () => {
       const response = await axios.post('/auth/login', { username, password });
       setIsSubmitting(false);
       alert('Login successful');
-      // Example: Storing token in local storage
-      localStorage.setItem('token', response.data.token);
+      // Store JWT token in localStorage (consistent with api.js and PrivateRoute)
+      localStorage.setItem('jwtToken', response.data.token);
       navigate('/'); // Redirect to home or dashboard after successful login
     } catch (error) {
       setIsSubmitting(false);
