@@ -22,7 +22,7 @@ const secretKey = crypto.scryptSync(config.jwtSecret, 'salt', 32);
 
 exports.encryptData = (text) => {
   const iv = crypto.randomBytes(16);
-  const cipher = crypto.createCipher(algorithm, secretKey);
+  const cipher = crypto.createCipheriv(algorithm, secretKey, iv);
   
   let encrypted = cipher.update(text, 'utf8', 'hex');
   encrypted += cipher.final('hex');
@@ -36,7 +36,7 @@ exports.encryptData = (text) => {
 exports.decryptData = (encryptedData) => {
   const { encrypted, iv } = encryptedData;
   
-  const decipher = crypto.createDecipher(algorithm, secretKey);
+  const decipher = crypto.createDecipheriv(algorithm, secretKey, Buffer.from(iv, 'hex'));
   
   let decrypted = decipher.update(encrypted, 'hex', 'utf8');
   decrypted += decipher.final('utf8');
