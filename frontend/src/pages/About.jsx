@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
-    <main style={styles.page}>
+    <div style={styles.container}>
       <div style={styles.heroSection}>
         <h1 style={styles.title}>Discover Quantacipher</h1>
         <p style={styles.subtitle}>
@@ -40,42 +40,52 @@ const About = () => {
         </blockquote>
         <p style={styles.quoteAuthor}>- Aditya Singh, Quantacipher</p>
       </div>
-    </main>
+    </div>
   );
 };
 
 const styles = {
-  page: {
+  container: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    padding: '50px',
-    minHeight: '100vh',
-    background: '#f0f0f0',
+    color: '#00ff41',
   },
   heroSection: {
     textAlign: 'center',
     marginBottom: '50px',
+    padding: '20px',
   },
   title: {
     fontSize: '3rem',
-    color: '#333',
+    color: '#00ff41',
     marginBottom: '20px',
+    textShadow: '0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41',
+    fontFamily: "'Orbitron', monospace",
+    fontWeight: '700',
+    letterSpacing: '3px',
   },
   subtitle: {
     fontSize: '1.5rem',
-    color: '#666',
+    color: 'rgba(0, 255, 65, 0.9)',
     marginBottom: '40px',
+    textShadow: '0 0 5px #00ff41',
+    fontFamily: "'Share Tech Mono', monospace",
   },
   button: {
     display: 'inline-block',
-    padding: '12px 24px',
-    backgroundColor: '#007bff',
-    color: '#fff',
+    padding: '14px 28px',
+    backgroundColor: 'transparent',
+    color: '#00ff41',
     textDecoration: 'none',
-    borderRadius: '5px',
-    transition: 'background-color 0.3s',
-    fontSize: '1.2rem',
+    borderRadius: '4px',
+    border: '2px solid #00ff41',
+    transition: 'all 0.3s',
+    fontSize: '1rem',
+    fontFamily: "'Share Tech Mono', monospace",
+    textTransform: 'uppercase',
+    letterSpacing: '2px',
+    boxShadow: '0 0 20px rgba(0, 255, 65, 0.3)',
+    textShadow: '0 0 10px #00ff41',
   },
   buttonHover: {
     backgroundColor: '#0056b3',
@@ -85,51 +95,68 @@ const styles = {
     justifyContent: 'space-around',
     marginBottom: '50px',
     width: '100%',
+    flexWrap: 'wrap',
+    gap: '20px',
   },
   feature: {
     textAlign: 'center',
     width: '30%',
-    background: '#fff',
+    minWidth: '250px',
+    background: 'rgba(0, 0, 0, 0.7)',
+    border: '1px solid #00ff41',
     padding: '30px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-    transition: 'transform 0.3s ease',
+    borderRadius: '4px',
+    boxShadow: '0 0 20px rgba(0, 255, 65, 0.2), inset 0 0 20px rgba(0, 255, 65, 0.05)',
+    transition: 'all 0.3s ease',
   },
   featureHover: {
     transform: 'translateY(-5px)',
+    boxShadow: '0 0 30px rgba(0, 255, 65, 0.4), inset 0 0 20px rgba(0, 255, 65, 0.1)',
   },
   icon: {
     fontSize: '3rem',
-    color: '#007bff',
+    color: '#00ff41',
     marginBottom: '20px',
+    filter: 'drop-shadow(0 0 10px #00ff41)',
   },
   featureTitle: {
     fontSize: '1.5rem',
-    color: '#333',
+    color: '#00ff41',
     marginBottom: '10px',
+    textShadow: '0 0 10px #00ff41',
+    fontFamily: "'Orbitron', monospace",
+    fontWeight: '600',
+    letterSpacing: '1px',
   },
   featureDescription: {
     fontSize: '1rem',
-    color: '#666',
+    color: 'rgba(0, 255, 65, 0.8)',
+    fontFamily: "'Share Tech Mono', monospace",
+    lineHeight: '1.6',
   },
   quoteSection: {
     textAlign: 'center',
     marginTop: '50px',
-    padding: '20px',
-    background: '#fff',
-    borderRadius: '8px',
-    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+    padding: '30px',
+    background: 'rgba(0, 0, 0, 0.7)',
+    border: '1px solid #00ff41',
+    borderRadius: '4px',
+    boxShadow: '0 0 20px rgba(0, 255, 65, 0.3)',
     maxWidth: '600px',
+    margin: '50px auto 0',
   },
   quote: {
     fontStyle: 'italic',
     fontSize: '1.5rem',
-    color: '#333',
+    color: '#00ff41',
     marginBottom: '20px',
+    textShadow: '0 0 10px #00ff41',
+    fontFamily: "'Share Tech Mono', monospace",
   },
   quoteAuthor: {
     fontSize: '1rem',
-    color: '#666',
+    color: 'rgba(0, 255, 65, 0.8)',
+    fontFamily: "'Share Tech Mono', monospace",
   },
 };
 
