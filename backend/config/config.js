@@ -1,5 +1,5 @@
 module.exports = {
-    mongoURI: 'mongodb+srv://22053220:eCk7u4wxzQBlboFh@quantacipher.ftr5amk.mongodb.net/?retryWrites=true&w=majority&appName=quantacipher',
-    secretOrKey: 'dd3ffd625bf1cdc8bf80a32bb2c9c6cc5259370d7ae93df03256b3d884f58d3b3236ca2764564d3fbd1dbdf7475aa7779e9cd409e446e16d19596e460d60dda6' // Your strong secret key for JWT
+    mongoURI: 'mongodb+srv://adityakittu2773_db_user:juIcEfD7fdVvOjQb@cluster0.osr7t1b.mongodb.net/quantacipher?retryWrites=true&w=majority&appName=Cluster0',
+    secretOrKey: '936c9baa5f9b31dedf38293d3ec7b5702bfba567e9f30a644bc854c4f5f4b982cd279bf0ac7f34db34fbfc54550310d7d31762d2a53f314b7338ee6b27d18977' // Your strong secret key for JWT
   };
   

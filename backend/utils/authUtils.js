@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const config = require('../config/config');
 
 exports.generateToken = (user) => {
-  return jwt.sign({ id: user.id }, config.secretOrKey, { expiresIn: '1h' });
+  return jwt.sign({ id: user._id }, config.secretOrKey, { expiresIn: '24h' });
 };
 
 exports.hashPassword = async (password) => {
